@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/todo.js"></script>
+    <title>TodoApp</title>
+</head>
+
+<body>
+    <header>
+        <form>
+            <input type="text" placeholder="请输入信息" name="item" id="item">
+            <button type="submit" id="add">
+                <svg t="1585374113902" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="4034" width="16" height="16">
+                    <path
+                        d="M438.857143 438.857143H0v146.285714h438.857143v438.857143h146.285714V585.142857h438.857143V438.857143H585.142857V0H438.857143z"
+                        fill=" " p-id="4035"></path>
+                </svg>
+            </button>
+        </form>
+    </header>
+
+    <div class="container">
+        <!--未完成列表-->
+        <ul class="todo" id="todo">
+            <!--动态添加数据-->
+
+            <% todos.forEach(function(todo){%>
+            <li>
+                <p><%= todo.item %></p>
+                <div class="buttons">
+                    <button class="remove"><svg t="1585374500349" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="5379">
+                            <path
+                                d="M288 952.8c-48.8 0-88.8-40-88.8-88.8v-480.8c0-13.6 11.2-24.8 24.8-24.8s24.8 11.2 24.8 24.8v480.8c0 21.6 17.6 39.2 39.2 39.2h448c21.6 0 39.2-17.6 39.2-39.2V384.8c0-13.6 11.2-24.8 24.8-24.8s24.8 11.2 24.8 24.8v479.2c0 48.8-40 88.8-88.8 88.8h-448z m320-192c-13.6 0-24.8-11.2-24.8-24.8v-352c0-13.6 11.2-24.8 24.8-24.8s24.8 11.2 24.8 24.8v352c0 13.6-11.2 24.8-24.8 24.8z m-192 0c-13.6 0-24.8-11.2-24.8-24.8v-352c0-13.6 11.2-24.8 24.8-24.8s24.8 11.2 24.8 24.8v352c0 13.6-11.2 24.8-24.8 24.8z m-320-480c-13.6 0-24.8-11.2-24.8-24.8s11.2-24.8 24.8-24.8h167.2v-71.2c0-48.8 40-88.8 88.8-88.8h320.8c48.8 0 88.8 40 88.8 88.8v71.2h167.2c13.6 0 24.8 11.2 24.8 24.8s-11.2 24.8-24.8 24.8H96z m256-160c-21.6 0-39.2 17.6-39.2 39.2v71.2h397.6v-71.2c0-21.6-16.8-39.2-38.4-39.2h-320z"
+                                p-id="5380"></path>
+                        </svg></button>
+
+                    <button class="complete"><svg t="1585376676151" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="6217">
+                            <path
+                                d="M403.3 659.9c18-16.3 32.2-28.6 45.7-41.6 129.2-124.4 258.6-248.7 387.3-373.5 31.2-30.2 63.8-45.4 102-13.8 32 26.4 27.2 63.2-12.6 101.7C773.2 480.3 620.2 627.8 467.1 775c-48 46.1-74.1 46.4-121.2 1.5-83.1-79.4-165.3-159.8-248.5-239.1C66 507.5 50.1 476 82.8 439.1c27.4-30.9 65.6-26.4 105.5 11.9 71.3 68.5 141.9 137.8 215 208.9z"
+                                p-id="6218"></path>
+                        </svg></button>
+                </div>
+            </li>
+            <% })%>
+
+        </ul>
+
+        <!--已完成列表-->
+        <ul class="todo" id="completed">
+            <!--动态添加数据-->
+
+        </ul>
+    </div>
+
+</body>
+
+</html>
